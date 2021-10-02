@@ -29,5 +29,6 @@ class Channel(models.Model):
     @api.model
     def init_odoobot(self):
         channel = super(Channel, self).init_odoobot()
-        channel.write({'name': 'Chat Bot'})
+        if channel:
+            channel.write({'name': 'Chat Bot'})
         return channel
